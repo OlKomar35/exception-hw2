@@ -3,7 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Program {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
         /**
          * задание 1
@@ -13,14 +13,16 @@ public class Program {
         /**
          * задание 2
          */
-        int[] intArray = {1,2,3,4,5,6,7,8,9};
-        try {
-            int d = 0;
+        int[] intArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        int d = 0;
+        if (d != 0) {
             double catchedRes1 = intArray[8] / d;
             System.out.println("catchedRes1 = " + catchedRes1);
-        } catch (ArithmeticException e) {
-            System.out.println("Catching exception: " + e);
+        } else {
+            System.out.println("Catching exception: деление на ноль");
         }
+
 
         /**
          * задание 3
@@ -36,7 +38,7 @@ public class Program {
             System.out.println("Указатель не может указывать на null!");
         } catch (IndexOutOfBoundsException ex) {
             System.out.println("Массив выходит за пределы своего размера!");
-        } catch (ArithmeticException ex){
+        } catch (ArithmeticException ex) {
             System.out.println("Деление на ноль не допустимо");
         }
 
@@ -72,7 +74,7 @@ public class Program {
         System.out.println(a + b);
     }
 
-    public static void isEmptyStr(){
+    public static void isEmptyStr() {
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.println("Введите не пустую строку: ");
@@ -81,7 +83,7 @@ public class Program {
             if (str.isEmpty()) {
                 throw new EmptyStringException();
             }
-        }catch (EmptyStringException e){
+        } catch (EmptyStringException e) {
             e.printStackTrace();
         } finally {
             scanner.close();
